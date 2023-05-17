@@ -458,7 +458,7 @@ img {
   position: absolute;
   width: 126px;
   height: 38px;
-  left: 890px;
+  left: 854px;
   top: 361px;
 
   font-family: "Inconsolata";
@@ -476,7 +476,7 @@ img {
   width: 43px;
   height: 17px;
   left: 677px;
-  top: 461px;
+  top: 457px;
 
   font-family: "Inconsolata";
   font-style: normal;
@@ -511,8 +511,8 @@ img {
   position: absolute;
   width: 126px;
   height: 38px;
-  left: 890px;
-  top: 451px;
+  left: 854px;
+  top: 444px;
 
   font-family: "Inconsolata";
   font-style: normal;
@@ -544,7 +544,7 @@ img {
   width: 126px;
   height: 38px;
   left: 832px;
-  top: 453px;
+  top: 444px;
 
   font-family: "Inconsolata";
   font-style: normal;
@@ -575,4 +575,55 @@ img {
   padding-top: 12;
   padding-left: 112;
   color: #9c60ff;
+}
+
+#perP{
+  position: absolute;
+  width: 153px;
+  height: 17px;
+  left: 677px;
+  top: 541px;
+
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 17px;
+  /* identical to box height */
+
+  letter-spacing: 0.045em;
+
+  color: #f3e4ff;
+}
+#r3{
+  position: absolute;
+  width: 126px;
+  height: 38px;
+  left: 832px;
+  top: 529px;
+
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 42px;
+  letter-spacing: 0.01em;
+
+  color: #c39fff;
+}
+#perPersonBill{
+  position: absolute;
+  width: 126px;
+  height: 38px;
+  left: 854px;
+  top: 527px;
+
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 42px;
+  letter-spacing: 0.01em;
+
+  color: #c39fff;
 }
