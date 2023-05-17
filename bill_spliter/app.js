@@ -29,12 +29,14 @@ amount.addEventListener("input", function () {
 // function to calculate the tip amount from the given input by the user 
 
 // for 5% tip calculation
+let tipgenerated;
 let t5= document.getElementById("tip1");
 let tA5= document.getElementById("tipAmount");
 
 t5.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA5.innerText= (bill*(0.05)).toFixed(2);
+    tipgenerated =(bill*(0.05)).toFixed(2);
+    tA5.innerText= tipgenerated;
 })
 
 // for 10% tip calculation 
@@ -43,7 +45,8 @@ let tA10= document.getElementById("tipAmount");
 
 t10.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA10.innerText= (bill*(0.10)).toFixed(2);
+    tipgenerated=(bill*(0.10)).toFixed(2);
+    tA10.innerText= tipgenerated;
 })
 
 // for 15% tip calculation 
@@ -52,7 +55,8 @@ let tA15= document.getElementById("tipAmount");
 
 t15.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA15.innerText= (bill*(0.15)).toFixed(2);
+    tipgenerated=(bill*(0.15)).toFixed(2);
+    tA15.innerText= tipgenerated;
 })
 // for 25% tip calculation 
 let t25=document.getElementById("tip4");
@@ -60,7 +64,8 @@ let tA25= document.getElementById("tipAmount");
 
 t25.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA25.innerText= (bill*(0.25)).toFixed(2);
+    tipgenerated=(bill*(0.25)).toFixed(2);
+    tA25.innerText= tipgenerated;
 })
 // for 50% tip calculation 
 let t50= document.getElementById("tip5");
@@ -68,7 +73,8 @@ let tA50= document.getElementById("tipAmount");
 
 t50.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA50.innerText= (bill*(0.50)).toFixed(2);
+    tipgenerated=(bill*(0.50)).toFixed(2);
+    tA50.innerText= tipgenerated;
 })
 // for 75% tip calculation 
 let t75= document.getElementById("tip6");
@@ -76,7 +82,8 @@ let tA75= document.getElementById("tipAmount");
 
 t75.addEventListener("click",function(){
     let bill = parseFloat(input);
-    tA75.innerText= (bill*(0.75)).toFixed(2);
+    tipgenerated=(bill*(0.75)).toFixed(2);
+    tA75.innerText= tipgenerated;
 })
 
 
@@ -86,11 +93,12 @@ t75.addEventListener("click",function(){
 let elements = document.querySelectorAll("#add, #small2");
 let sub = document.querySelector("#sub");
 let num = document.querySelector("#num");
-
+let currentNum;
 add.addEventListener("click", function () {
   let currentValue = parseInt(num.innerText);
   let newValue = currentValue + 1;
   num.innerText = newValue;
+  currentNum = parseFloat(newValue);
 });
 
 sub.addEventListener("click", function () {
@@ -100,8 +108,39 @@ sub.addEventListener("click", function () {
     newValue = 0;
   }
   num.innerText = newValue;
+  currentNum = parseFloat(newValue);
 });
 
+// add generate bill button functionality in generate button 
+let generateBox = document.getElementById("generateBox");
+let totalAmt = document.getElementById("totalAmt");
+let genTamt;
+let perPersonBill = document.getElementById("perPersonBill");
 
+generateBox.addEventListener("click",function(){
+  genTamt = (parseFloat(tipgenerated) + parseFloat(input)).toFixed(2);
+  totalAmt.innerText= genTamt;
+  let divAmt= (parseFloat(genTamt)/parseFloat(currentNum)).toFixed(2);
+  perPersonBill.innerText=divAmt;
 
-adding clickgenerate bill 
+});
+
+// function to reset every changes made in the values :
+let resetButton = document.querySelector("#reset");
+
+resetButton.addEventListener("click", function() {
+  amount.innerText = "";
+  tA5.innerText = "0.00";
+  tA10.innerText = "0.00";
+  tA15.innerText = "0.00";
+  tA25.innerText = "0.00";
+  tA50.innerText = "0.00";
+  tA75.innerText = "0.00";
+  num.innerText = "0";
+  totalAmt.innerText = "0.00";
+  perPersonBill.innerText = "0.00";
+  amount.contentEditable = false;
+  tipgenerated = 0;
+  genTamt = 0;
+  currentNum = 0;
+});
